@@ -8,7 +8,7 @@ body {
 
 @layer utilities {
   .testKlasa1 {
-    font-family: var(--font-inter);
+    font-family: var(--font-space-grotesk);
   }
 
   .background-light850_dark100 {
