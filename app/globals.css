@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* GENERAL NOTES:
+
+- Always think about usability!
+
+MEDIA QUERIES:
+- If you decide to build mobile-first, you should almost always use min-width media queries.
+- Use rem media queries in most situations.
+  - With pixel-based media queries, we stick with the desktop layout no matter what the user does with their default font size. 
+    When cranked to 32px, it means we wind up with a really cramped layout: the sidebar expands and fills half of the screen (since it uses a rem-based width).
+  - When we use rem-based media queries, we flip to the mobile view (even though they're using a desktop-sized window). 
+    The large text has more room to breathe, and it's generally just a much better experience. 
+
+GENERAL BREAK POINTS:
+0-550px — Mobile
+550-1100px — Tablet
+1100-1500px — Laptop
+1500+px — Desktop
+ 
+TAILWIND BREAK POINTS:
+sm	640px  (min-width: 640px)
+md	768px  (min-width: 768px)
+lg	1024px (min-width: 1024px)
+xl	1280px (min-width: 1280px)
+2xl	1536px (min-width: 1536px)
+
+
+*/
+
 body {
   font-family: "Inter", sans-serif;
 }
