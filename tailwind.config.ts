@@ -51,6 +51,10 @@ export default {
       screens: {
         xs: "420px",
       },
+      backgroundImage: {
+        "auth-dark": 'url("/images/auth-dark.png")',
+        "auth-light": 'url("/images/auth-light.png")',
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports

@@ -1,8 +1,10 @@
 import type {Metadata} from "next";
 import {Inter, Space_Grotesk as SpaceGrotesk} from "next/font/google";
-
 import "./globals.css";
-import DesktopNavbar from "@/components/navigation/navbar/DesktopNavbar";
+import {SessionProvider} from "next-auth/react";
+
+import {auth} from "@/auth";
+import {Toaster} from "@/components/ui/toaster";
 import ThemeProvider from "@/context/ThemeProvider";
 
 const inter = Inter({
@@ -26,11 +28,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
+  const session = await auth();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -39,19 +43,23 @@ export default function RootLayout({
         initial-scale=1 says that we should start at 1x zoom. */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          disableTransitionOnChange
-          enableSystem
+      <SessionProvider session={session}>
+        <body
+          className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
         >
-          <DesktopNavbar />
-          {children}
-        </ThemeProvider>
-      </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            disableTransitionOnChange
+            enableSystem
+          >
+            {children}
+          </ThemeProvider>
+          <Toaster />
+        </body>
+      </SessionProvider>
     </html>
   );
-}
+};
+
+export default RootLayout;
