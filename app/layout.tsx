@@ -42,6 +42,13 @@ const RootLayout = async ({
         match the device's width (example: on DPI 3 device with 980x resolution it takes 320px instead of 980px). 
         initial-scale=1 says that we should start at 1x zoom. */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* This enables using icons from Devicon */}
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </head>
       <SessionProvider session={session}>
         <body
