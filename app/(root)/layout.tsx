@@ -1,11 +1,11 @@
 import React, {ReactNode} from "react";
 
-import DesktopNavbar from "@/components/navigation/navbar/DesktopNavbar";
+import Navbar from "@/components/navigation/navbar/Navbar";
 
 const RootLayout = ({children}: {children: ReactNode}) => {
   return (
     <main>
-      <DesktopNavbar />
+      <Navbar />
       {children}
     </main>
   );
