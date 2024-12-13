@@ -3,17 +3,11 @@ import React from "react";
 
 import ROUTES from "@/constants/routes";
 import {getDeviconClassName} from "@/lib/utils";
+import {Tag} from "@/types/types";
 
 import {Badge} from "../ui/badge";
 
-interface Props {
-  _id: string;
-  name: string;
-  questions: number;
-  showCount?: boolean;
-}
-
-const TagCard = ({_id, name, questions, showCount}: Props) => {
+const TagCard = ({_id, name, questions, showCount}: Tag) => {
   const iconClass = getDeviconClassName(name);
 
   return (
