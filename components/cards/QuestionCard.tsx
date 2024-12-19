@@ -40,7 +40,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({question}) => {
           value={author.name}
           title={`asked ${getTimeStamp(createdAt)}`}
           href={ROUTES.PROFILE(author._id)}
-          textStyle="body-medium text-dark400_light700"
+          textStyles="body-medium text-dark400_light700"
           isAuthor
         />
         <div className="flex items-center gap-3 max-sm:flex-wrap max-sm:justify-start">
@@ -49,21 +49,21 @@ const QuestionCard: React.FC<QuestionCardProps> = ({question}) => {
             alt="Upvotes"
             value={upvotes}
             title="Votes"
-            textStyle="text-dark400_light800"
+            textStyles="text-dark400_light800"
           />
           <MetricInfo
             imgUrl="/icons/message.svg"
             alt="Answers"
             value={answers}
             title="Answers"
-            textStyle="text-dark400_light800"
+            textStyles="text-dark400_light800"
           />
           <MetricInfo
             imgUrl="/icons/eye.svg"
             alt="Views"
             value={views}
             title="Views"
-            textStyle="text-dark400_light800"
+            textStyles="text-dark400_light800"
           />
         </div>
       </div>
