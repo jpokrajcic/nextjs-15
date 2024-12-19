@@ -11,8 +11,8 @@ export default {
     extend: {
       colors: {
         primary: {
-          "100": "hsla(26, 100%, 50%, 1)",
-          "500": "hsla(26, 100%, 95%, 1)",
+          "100": "hsl(26, 100%, 95%,1)",
+          "500": "hsl(26, 100%, 50%,1)",
         },
         dark: {
           "100": "hsla(0, 0%, 0%, 1)",
@@ -60,5 +60,5 @@ export default {
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
