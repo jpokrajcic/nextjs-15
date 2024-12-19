@@ -3,6 +3,10 @@ export interface Tag {
   name: string;
   questions?: number;
   showCount?: boolean;
+  compact?: boolean;
+  remove?: boolean;
+  isButton?: boolean;
+  handleRemove?: () => void;
 }
 
 export interface Question {

@@ -40,7 +40,11 @@ interface MarkdownEditorProps extends MDXEditorProps {
   editorRef: ForwardedRef<MDXEditorMethods> | null;
 }
 
-const MarkdownEditor = ({value, onChange, editorRef}: MarkdownEditorProps) => {
+const MarkdownEditor = ({
+  value,
+  fieldChange,
+  editorRef,
+}: MarkdownEditorProps) => {
   const {resolvedTheme} = useTheme();
   const theme = resolvedTheme === "dark" ? [basicDark] : [];
 
@@ -48,7 +52,7 @@ const MarkdownEditor = ({value, onChange, editorRef}: MarkdownEditorProps) => {
     <MDXEditor
       key={resolvedTheme}
       markdown={value}
-      onChange={onChange}
+      onChange={fieldChange}
       ref={editorRef}
       className="background-light800_dark200 light-border-2 markdown-editor dark-editor w-full border"
       plugins={[
